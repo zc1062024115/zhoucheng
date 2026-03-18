@@ -11,6 +11,26 @@
             box-sizing: border-box;
         }
 
+	
+		/* 禁止选中、禁止拖动图片 */
+		img {
+			-webkit-user-select: none !important;
+			-moz-user-select: none !important;
+			-ms-user-select: none !important;
+			user-select: none !important;
+			pointer-events: none !important;
+			-webkit-user-drag: none !important;
+			user-drag: none !important;
+		}
+
+		/* 禁止页面文本选中 */
+		body {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	
         /* 图片容器：核心布局控制 */
         .img-page-style {
             /* 1. 左右各10%间距，容器宽度为80% */
@@ -110,70 +130,70 @@
 
 <body>
 
-<div class="img-style"><img src="../images/search.jpg" alt="search" class="img-pic"></div>
+<div class="img-style"><img src="images/homepage/search.jpg" alt="search" class="img-pic"></div>
 <div class="img-page-style">
 	
 	<!--顶部店招部分-->
-	<div class="img-style"><img src="../images/wheelchair-page/wheelchair-top.jpg" alt="top" class="img-pic"></div>
+	<div class="img-style"><img src="images/wheelchair-page/wheelchair-top.jpg" alt="top" class="img-pic"></div>
 	
 	<!--导航栏和指引部分-->
-	<div class="img-style"><img src="../images/menu.jpg" alt="menu" class="img-pic" id="targetModule"></div>
+	<div class="img-style"><img src="images/homepage/menu.jpg" alt="menu" class="img-pic" id="targetModule"></div>
 	
 	<!--产品大图banner场景部分-->
-	<div class="img-style"><img src="../images/wheelchair-page/wheelchair-gather.jpg" alt="Electric Wheelchair Gather" class="img-pic"></div>
+	<div class="img-style"><img src="images/wheelchair-page/wheelchair-gather.jpg" alt="Electric Wheelchair Gather" class="img-pic"></div>
 	
 	<!--产品分类展示部分-->
 	<div class="img-style-1">
 		<div class="img-pic-1">
 			<!--<img src="../images/product-1.jpg" alt="product-5526" class="img-pic">-->
-			<video src="../images/video/220.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
+			<video src="images/video/220.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
 			
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-220-black.jpg" alt="product-220" class="img-pic">
+			<img src="images/wheelchair-page/product-220-black.jpg" alt="product-220" class="img-pic">
 		</div>
 	</div>
 	
 	<div class="img-style-1">
 		<div class="img-pic-1">
 			<!--<img src="../images/product-1.jpg" alt="product-5526" class="img-pic">-->
-			<video src="../images/video/A07J.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
+			<video src="images/video/A07J.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
 			
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-A07J-red.jpg" alt="product-A07J" class="img-pic">
+			<img src="images/wheelchair-page/product-A07J-red.jpg" alt="product-A07J" class="img-pic">
 		</div>
 	</div>
 
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-W5526-black.jpg" alt="product-5526" class="img-pic">
+			<img src="images/wheelchair-page/product-W5526-black.jpg" alt="product-5526" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-01.jpg" alt="product-5526" class="img-pic-2">
-			<img src="../images/wheelchair-page/product-02.jpg" alt="product-220" class="img-pic-2">
+			<img src="images/wheelchair-page/product-01.jpg" alt="product-5526" class="img-pic-2">
+			<img src="images/wheelchair-page/product-02.jpg" alt="product-220" class="img-pic-2">
 		</div>
 	</div>
 	
 	
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-N5513A-black.jpg" alt="product-N5513A" class="img-pic">
+			<img src="images/wheelchair-page/product-N5513A-black.jpg" alt="product-N5513A" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-03.jpg" alt="product-N5513A" class="img-pic-2">
-			<img src="../images/wheelchair-page/product-04.jpg" alt="product-213" class="img-pic-2">
+			<img src="images/wheelchair-page/product-03.jpg" alt="product-N5513A" class="img-pic-2">
+			<img src="images/wheelchair-page/product-04.jpg" alt="product-213" class="img-pic-2">
 		</div>
 	</div>
 		
 	
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-203-black.jpg" alt="product-203" class="img-pic">
+			<img src="images/wheelchair-page/product-203-black.jpg" alt="product-203" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/wheelchair-page/product-05.jpg" alt="product-203" class="img-pic-2">
-			<img src="../images/wheelchair-page/product-06.jpg" alt="product-A07J" class="img-pic-2">
+			<img src="images/wheelchair-page/product-05.jpg" alt="product-203" class="img-pic-2">
+			<img src="images/wheelchair-page/product-06.jpg" alt="product-A07J" class="img-pic-2">
 		</div>
 	</div>
 	
@@ -199,6 +219,21 @@
             }
         });
 		
+		// 禁止右键菜单
+		document.oncontextmenu = function (e) {
+			return false;
+		};
+
+		// 禁止F12、Ctrl+Shift+I、Ctrl+U
+		document.onkeydown = function (e) {
+			if (
+				e.key === "F12" || 
+				(e.ctrlKey && e.shiftKey && e.key === "I") || 
+				(e.ctrlKey && e.key === "u")
+			) {
+				return false;
+			}
+		};
 		
     </script>
 </body>

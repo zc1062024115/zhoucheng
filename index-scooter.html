@@ -10,7 +10,27 @@
             padding: 0;
             box-sizing: border-box;
         }
+		
+	
+		/* 禁止选中、禁止拖动图片 */
+		img {
+			-webkit-user-select: none !important;
+			-moz-user-select: none !important;
+			-ms-user-select: none !important;
+			user-select: none !important;
+			pointer-events: none !important;
+			-webkit-user-drag: none !important;
+			user-drag: none !important;
+		}
 
+		/* 禁止页面文本选中 */
+		body {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	
         /* 图片容器：核心布局控制 */
         .img-page-style {
             /* 1. 左右各10%间距，容器宽度为80% */
@@ -110,55 +130,55 @@
 
 <body>
 
-<div class="img-style"><img src="../images/search.jpg" alt="search" class="img-pic"></div>
+<div class="img-style"><img src="images/homepage/search.jpg" alt="search" class="img-pic"></div>
 <div class="img-page-style">
 	
 	<!--顶部店招部分-->
-	<div class="img-style"><img src="../images/scooter-page/scooter-top.jpg" alt="top" class="img-pic"></div>
+	<div class="img-style"><img src="images/scooter-page/scooter-top.jpg" alt="top" class="img-pic"></div>
 	
 	<!--导航栏和指引部分-->
-	<div class="img-style"><img src="../images/menu.jpg" alt="menu" class="img-pic" id="targetModule"></div>
+	<div class="img-style"><img src="images/homepage/menu.jpg" alt="menu" class="img-pic" id="targetModule"></div>
 	
 	<!--产品大图banner场景部分-->
-	<div class="img-style"><img src="../images/scooter-page/scooter-gather.jpg" alt="mobility scooter Gather" class="img-pic"></div>
+	<div class="img-style"><img src="images/scooter-page/scooter-gather.jpg" alt="mobility scooter Gather" class="img-pic"></div>
 	
 	<!--产品分类展示部分-->
 	<div class="img-style-1">
 		<div class="img-pic-1">
 			<!--<img src="../images/product-1.jpg" alt="product-5526" class="img-pic">-->
-			<video src="../images/video/KD1.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
+			<video src="images/video/KD1.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
 			
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/product-KD1-blue.jpg" alt="product-KD1" class="img-pic">
+			<img src="images/scooter-page/product-KD1-blue.jpg" alt="product-KD1" class="img-pic">
 		</div>
 	</div>
 	
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/W3431Q-video.jpg" alt="product-W3431Q" class="img-pic">
+			<img src="images/scooter-page/W3431Q-video.jpg" alt="product-W3431Q" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/product-W3431Q-red.jpg" alt="product-W3431Q" class="img-pic">
+			<img src="images/scooter-page/product-W3431Q-red.jpg" alt="product-W3431Q" class="img-pic">
 		</div>
 	</div>
 
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/T550-video.jpg" alt="product-T550" class="img-pic">
+			<img src="images/scooter-page/T550-video.jpg" alt="product-T550" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/product-T550-blue.jpg" alt="product-T550" class="img-pic">
+			<img src="images/scooter-page/product-T550-blue.jpg" alt="product-T550" class="img-pic">
 		</div>
 	</div>
 	
 	
 	<div class="img-style-1">
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/985-video.jpg" alt="product-985" class="img-pic">
+			<img src="images/scooter-page/985-video.jpg" alt="product-985" class="img-pic">
 		</div>
 		<div class="img-pic-1">
-			<img src="../images/scooter-page/product-985-red.jpg" alt="product-985" class="img-pic">
+			<img src="images/scooter-page/product-985-red.jpg" alt="product-985" class="img-pic">
 		</div>
 	</div>
 	
@@ -185,7 +205,21 @@
             }
         });
 		
-		
+		// 禁止右键菜单
+		document.oncontextmenu = function (e) {
+			return false;
+		};
+
+		// 禁止F12、Ctrl+Shift+I、Ctrl+U
+		document.onkeydown = function (e) {
+			if (
+				e.key === "F12" || 
+				(e.ctrlKey && e.shiftKey && e.key === "I") || 
+				(e.ctrlKey && e.key === "u")
+			) {
+				return false;
+			}
+		};
     </script>
 </body>
 </html>
