@@ -10,6 +10,25 @@
             padding: 0;
             box-sizing: border-box;
         }
+	
+		
+		 /* 禁止选中、禁止拖动图片 */
+		img {
+			-webkit-user-select: none !important;
+			-moz-user-select: none !important;
+			-ms-user-select: none !important;
+			user-select: none !important;
+			pointer-events: none !important;
+			-webkit-user-drag: none !important;
+			user-drag: none !important;
+		}
+		/* 禁止页面文本选中 */
+		body {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
 
         /* 图片容器：核心布局控制 */
         .img-page-style {
@@ -170,7 +189,7 @@
 	<div class="img-style"><img src="images/homepage/title-3.jpg" alt="title3" class="img-pic"></div>
 	
 	<div class="img-style">
-		<video src="../images/video/concept.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
+		<video src="images/video/concept.mp4" autoplay loop muted playsinline preload="auto" style="pointer-events: none; width: 100%;" ></video>
 	</div>
 	
 	<div class="img-style"><img src="images/homepage/brand-banner.jpg" alt="Brand Story" class="img-pic"></div>	
@@ -197,6 +216,22 @@
             }
         });
 		
+		// 禁止右键菜单
+		document.oncontextmenu = function (e) {
+			return false;
+		};
+
+		// 禁止F12、Ctrl+Shift+I、Ctrl+U
+		document.onkeydown = function (e) {
+			if (
+				e.key === "F12" || 
+				(e.ctrlKey && e.shiftKey && e.key === "I") || 
+				(e.ctrlKey && e.key === "u")
+			) {
+				return false;
+			}
+		};
+
 		
     </script>
 </body>
